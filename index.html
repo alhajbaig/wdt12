@@ -283,12 +283,12 @@
 
 <nav>
     <a href="#" class="active">Home</a>
-    <a href="C:\Users\HP\Desktop\categories.html">Categories</a>
-    <a href="C:\Users\HP\Desktop\contact.html">Contact</a>
-    <a href="C:\Users\HP\Desktop\login page.html">Login</a>
-    <a href="C:\Users\HP\Desktop\aboutus.html">About us</a>
-    <a href="C:\Users\HP\Desktop\faqs.html">FAQS</a>
-    <a href="C:\Users\HP\Desktop\privacy.html">Privacy Policy</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+    <a href="login page.html">Login</a>
+    <a href="aboutus.html">About us</a>
+    <a href="faqs.html">FAQS</a>
+    <a href="privacy.html">Privacy Policy</a>
     
     <!-- Dropdown Example -->
     <div class="dropdown">
