@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Gully Sports</title>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1e88e5);
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .faq-container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .faq-item {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .faq-item:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #0d47a1;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .faq-item:hover h3 {
+      color: #1e88e5;
+    }
+
+    .faq-answer {
+      display: none;
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-container h2 {
+      font-size: 2.5rem;
+      color: #0d47a1;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
+      header {
+        font-size: 2.2rem;
+      }
+
+      .faq-container {
+        width: 90%;
+      }
+
+      .faq-item h3 {
+        font-size: 1.4rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    Gully Sports - FAQs
+  </header>
+
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What types of jerseys do you sell?</h3>
+      <div class="faq-answer">
+        At Gully Sports, we specialize in high-quality jerseys for various sports, including football, basketball, cricket, and more. Our collection features jerseys from top teams and custom designs.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer custom jersey designs?</h3>
+      <div class="faq-answer">
+        Yes, we offer custom jersey printing! You can personalize your jersey with names, numbers, and logos of your choice. Just contact us, and we’ll take care of the rest.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>How can I place an order?</h3>
+      <div class="faq-answer">
+        Placing an order is easy! Just visit our shop section, select your desired jersey, choose the size, and click on 'Add to Cart.' Proceed to checkout to complete the order.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer international shipping?</h3>
+      <div class="faq-answer">
+        Yes, we offer international shipping to most countries. Shipping fees and delivery times vary depending on the location. You can view shipping options during checkout.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I exchange or return my jersey?</h3>
+      <div class="faq-answer">
+        We accept returns and exchanges within 14 days of purchase, as long as the jersey is unused and in its original condition. Please refer to our return policy for full details.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I choose the right size?</h3>
+      <div class="faq-answer">
+        We provide a detailed size chart for every jersey on our website to help you choose the perfect fit. If you're unsure, feel free to contact us for further guidance.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for FAQ Toggle Effect
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

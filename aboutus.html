@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GULLY SPORTS</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #2d98da, #1abc9c);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            z-index: 1000;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1.5em;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #1abc9c;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Animation for navigation */
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main container */
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            margin-top: 60px; /* To avoid nav overlap */
+        }
+
+        /* Header section */
+        header {
+            margin-bottom: 2em;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 1em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        /* About section */
+        .about-us {
+            max-width: 800px;
+            margin-top: 3em;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .about-us h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1.5em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            animation: bounceIn 2s ease-out;
+        }
+
+        /* Bounce animation for subheading */
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .about-us p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 2em;
+            animation: slideInFromLeft 1.5s ease-out;
+        }
+
+        /* Sliding effect for paragraph */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Team image gallery */
+        .team-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+            flex-wrap: wrap;
+            margin-top: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .team-gallery img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect for images */
+        .team-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer section */
+        footer {
+            margin-top: 4em;
+            font-size: 1rem;
+            color: #fff;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        /* Animation for footer */
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: #1abc9c;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="homepg.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="C:\Users\HP\Desktop\categories.html">Categories</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="C:\Users\HP\Desktop\login page.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <h1>About Us</h1>
+            <p>Welcome to GULLY SPORTS – Your destination for top-quality jerseys</p>
+        </header>
+
+        <!-- About section -->
+        <div class="about-us">
+            <h2>Who We Are</h2>
+            <p>At GULLY SPORTS, we are passionate about sports and fashion. Our goal is to provide fans around the world with high-quality, stylish jerseys for their favorite teams and athletes. Whether you are supporting your local club or following international teams, we have something for everyone.</p>
+            <p>We believe that sports are more than just games – they represent unity, culture, and passion. Our carefully curated collection of jerseys aims to bring the excitement of the game closer to you. Each product is made with premium materials to ensure comfort, durability, and style, so you can wear your team colors with pride.</p>
+        </div>
+
+        <!-- Team image gallery -->
+        <div class="team-gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwjc1-dBZsEMwvwGLgEHwQy-lN2rgcuF5Qw&s" alt="Team 1">
+            <img src="https://www.playspots.in/wp-content/uploads/2024/02/2023-08-04.jpg" alt="Team 2">
+            <img src="https://gullysports.in/wp-content/uploads/2024/09/Logo-Gully.png" alt="Team 3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOgqaLSUKi0JK2lnd7k8J-zxLNniAUypJx5g&s0" alt="Team 4">
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 GULLY SPORTS. All Rights Reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </footer>
+
+</body>
+
+</html>

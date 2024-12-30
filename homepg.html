@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jersey Shopping</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg,white,black);
+            color: #f2f2f2;
+        }
+
+        .logo img {
+            width: 80px;
+            animation: logoBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes logoBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header {
+            background-color: rgba(0, 162, 255, 0.8);
+            background-image: url(https://img.freepik.com/premium-photo/sports-background-with-bright-lights_327072-1776.jpg);
+            background-size: contain;
+            font-size: 35px;
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+            border-bottom: 3px solid #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        #page {
+            font-weight: bolder;
+            border: black;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #222;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 16px 25px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Add underline animation on hover */
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0d48a8;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Animated background color change on hover */
+        nav a:hover {
+            background-color: #0d48a8;
+            color: white;
+        }
+
+        /* Active Link Indicator */
+        nav a.active {
+            color: #0d48a8;
+            font-weight: 700;
+            border-bottom: 3px solid #0d48a8;
+        }
+
+        /* Full width dropdown menu animation */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1em 0;
+            border-radius: 5px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(10px);
+            opacity: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #ccc;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .container {
+            padding: 3em 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: url('https://img.freepik.com/premium-photo/lonal-messi-with-ball-waring-barsa-jersey-cyber-punk-neon-light-4k-image_783182-29.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: local;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black overlay */
+            z-index: 1;
+        }
+
+        .product {
+            border: 1px solid #444;
+            border-radius: 8px;
+            margin: 1em;
+            background-color: #2a3e59;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2; /* Ensure products appear above the overlay */
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .product img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            margin: 1em 0;
+            color: #fff;
+        }
+
+        .product p {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 1.5em;
+        }
+
+        .product button {
+            background-color: #0d48a8;
+            color: white;
+            border: none;
+            padding: 0.7em 1.2em;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .product button:hover {
+            background-color: #34a853;
+        }
+
+        footer {
+            background-color: #333;
+            color: #bbb;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 3em;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2em 3%;
+            }
+
+            .product {
+                width: 220px;
+            }
+
+            nav a {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            header {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1em 1%;
+            }
+
+            .product {
+                width: 180px;
+            }
+
+            header {
+                font-size: 24px;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="https://gullysports.in/wp-content/uploads/2024/09/Logo-Gully.png" alt="Gully Sports Logo">
+    </div>
+    <h1 id="page">GULLY SPORTS</h1>
+    <p>Find the best jerseys for your favorite sports teams</p>
+</header>
+
+<nav>
+    <a href="#" class="active">Home</a>
+    <a href="C:\Users\HP\Desktop\categories.html">Categories</a>
+    <a href="C:\Users\HP\Desktop\contact.html">Contact</a>
+    <a href="C:\Users\HP\Desktop\login page.html">Login</a>
+    <a href="C:\Users\HP\Desktop\aboutus.html">About us</a>
+    <a href="C:\Users\HP\Desktop\faqs.html">FAQS</a>
+    <a href="C:\Users\HP\Desktop\privacy.html">Privacy Policy</a>
+    
+    <!-- Dropdown Example -->
+    <div class="dropdown">
+        <a href="javascript:void(0)">More</a>
+        <div class="dropdown-content">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Return Policy</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" id="some">
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0LxPB24pKEAEWXklnpB8Kb-CIc-XAsF-JYg&s" alt="Barcalona Third Kit">
+        <h3>BARCALONA THIRD KIT</h3>
+        <p>$49.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html"> Add to Cart</a></button>
+    </div>
+    <div class="product">
+        <img src="https://images.meesho.com/images/products/389469665/qzr1z_1200.jpg" alt="Real Madrid Home Kit">
+        <h3>REAL MADRID HOME KIT</h3>
+        <p>$59.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html"> Add to Cart</a></button>
+    </div>
+    <div class="product">
+        <img src="https://images.meesho.com/images/products/401239818/3sjt5_1200.jpg" alt="Argentina Home Kit 2024-25">
+        <h3>ARGENTINA HOME KIT 2024-25</h3>
+        <p>$69.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html">Add to Cart</a></button>
+    </div>
+    <div class="product">
+        <img src="https://www.copycatz.in/wp-content/uploads/2024/02/Argentina-23-24-Special-Edition-Fianlisma-Jersey.jpeg" alt="Argentina Special Edition Jersey">
+        <h3>ARGENTINA HOME KIT 2024-25</h3>
+        <p>$69.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html">Add to Cart</a></button>
+    </div>
+    <div class="product">
+        <img src="https://ninety-minutes.in/cdn/shop/files/472DFCB0-6A34-49EF-9B91-4F94982A0866.jpg?v=1712853117" alt="Argentina 2024-25 Jersey">
+        <h3>ARGENTINA HOME KIT 2024-25</h3>
+        <p>$69.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html">Add to Cart</a></button>
+    </div>
+    <div class="product">
+        <img src="https://www.copycatz.in/wp-content/uploads/2024/06/Argentina-1994-Away-retro-Jersey.webp" alt="Argentina Retro Jersey">
+        <h3>ARGENTINA HOME KIT 2024-25</h3>
+        <p>$69.99</p>
+        <button><a href="C:\Users\HP\Desktop\addtocart.html">Add to Cart</a></button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Jersey Shopping. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
